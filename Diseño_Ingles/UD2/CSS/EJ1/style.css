@@ -1,0 +1,28 @@
+a {
+  text-decoration: none;
+  color: brown;
+}
+button {
+  background-color: orange;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: 0px;
+}
+h1 {
+  color: #336699;
+}
+main > h2 {
+  color: #336699;
+}
+.destacado > li {
+  list-style: square;
+}
+button:hover {
+  background-color: red;
+  cursor: pointer;
+}
+#lista {
+  color: black;
+  font-weight: bold;
+}

@@ -1,0 +1,13 @@
+ 
+Best Practices
+
+- Write the selectors using lowercase letters, separate with _ (ex: .header_p for paragraphs of the header).
+
+- Names must be descriptive.
+
+- Selector names DON'T describe properties.
+
+- When there is a conflict the browser picks the one with most specificity
+(ex: between body {color:red} and body > p {color:blue}, it will choose the latter).
+
+-The most specific rules go at the top of the document
