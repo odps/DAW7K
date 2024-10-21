@@ -6,14 +6,15 @@ const ctx = canvas.getContext("2d");
 const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
 
-// function to generate random number
+//Se añade el tiempo de vida de las bolas -------------------------
+const TIEMPO_VIDA = 10000;
 
+// function to generate random number
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 // function to generate random RGB color value
-
 function randomRGB() {
   return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
 }
@@ -26,16 +27,15 @@ class Ball {
     this.velY = velY;
     this.color = color;
     this.size = size;
+    this.birth = new Date();
   }
 
   draw() {
-    if (this.collided != true) {
-      ctx.beginPath();
-      ctx.fillStyle = this.color;
-      ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
-      ctx.fill();
-      ctx.closePath();
-    }
+    ctx.beginPath();
+    ctx.fillStyle = this.color;
+    ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.closePath();
   }
 
   update() {
@@ -66,16 +66,18 @@ class Ball {
         const dy = this.y - ball.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
 
-        /*
-            if (distance < this.size + ball.size) {
-              ball.color = this.color = randomRGB();
-            }
-            
-            Se elimina el cambio de color en colision
-
-         */
+        if (distance < this.size + ball.size) {
+          //Se añade destruccion de una al chocar con otra ------------------------------------
+          balls.splice(balls.indexOf(ball), 1);
+          //Se elimina el cambio de color en colision----------------------------------------
+          //ball.color = this.color = randomRGB();
+        }
       }
     }
+  }
+
+  verificaTiempo() {
+    return new Date() - this.birth > TIEMPO_VIDA;
   }
 }
 
@@ -103,6 +105,9 @@ function loop() {
   ctx.fillRect(0, 0, width, height);
 
   for (const ball of balls) {
+    if (ball.verificaTiempo()) {
+      balls.splice(balls.indexOf(ball), 1);
+    }
     ball.draw();
     ball.update();
     ball.collisionDetect();
