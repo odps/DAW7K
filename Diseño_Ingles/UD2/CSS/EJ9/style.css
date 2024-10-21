@@ -1,1 +1,38 @@
- 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+  text-align: center;
+}
+table {
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+}
+caption {
+  caption-side: bottom;
+}
+thead {
+  font-size: 20px;
+  padding: 10px;
+}
+th,
+td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+th {
+  background-color: #9688;
+  color: white;
+}
+tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+th:hover,
+td:hover {
+  background-color: #c7e2e0;
+}
+td:nth-child(3)::after {
+  content: "€";
+}
