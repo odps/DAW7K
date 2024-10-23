@@ -7,7 +7,7 @@ const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
 
 //Se añade el tiempo de vida de las bolas -------------------------
-const TIEMPO_VIDA = 10000;
+const TIEMPO_VIDA = 100000;
 
 // function to generate random number
 function random(min, max) {
@@ -18,6 +18,20 @@ function random(min, max) {
 function randomRGB() {
   return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
 }
+
+//Clickable balls
+document.addEventListener("click", function (e) {
+  const x = e.clientX;
+  const y = e.clientY;
+
+  for (const ball of balls) {
+    if (ball.isClicked(x, y)) {
+      ball.explode();
+      balls.splice(balls.indexOf(ball), 1);
+      break;
+    }
+  }
+});
 
 class Ball {
   constructor(x, y, velX, velY, color, size) {
@@ -57,6 +71,31 @@ class Ball {
 
     this.x += this.velX;
     this.y += this.velY;
+  }
+
+  // Ver si ha sido pinchada
+  isClicked(x, y) {
+    const dx = this.x - x;
+    const dy = this.y - y;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+    return distance <= this.size;
+  }
+  //Explotar la bola al ser pinchada;
+  explode() {
+    const fragments = 8 * 9;
+    const fragmentSize = this.size / 3;
+    for (let i = 0; i < fragments; i++) {
+      const angle = (i / fragments) * 2 * Math.PI;
+      const fragmentBall = new Ball(
+        this.x,
+        this.y,
+        Math.cos(angle) * 5,
+        Math.sin(angle) * 5,
+        this.color,
+        fragmentSize
+      );
+      balls.push(fragmentBall);
+    }
   }
 
   collisionDetect() {
