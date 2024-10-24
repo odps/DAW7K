@@ -1,0 +1,32 @@
+main,
+header,
+footer {
+  width: 100%;
+  float: left;
+  border: 1px solid red;
+}
+header {
+  height: 120px;
+}
+main {
+  height: 360px;
+  margin-top: 10px;
+}
+aside {
+  float: left;
+  width: 25%;
+  height: 100%;
+  border-right: 1px solid red;
+}
+#logo {
+  float: left;
+  width: 25%;
+  height: 60%;
+  border-right: 1px solid red;
+}
+#menu {
+  top: 10px;
+  clear: both;
+  height: 40%;
+  border-top: 1px solid red;
+}

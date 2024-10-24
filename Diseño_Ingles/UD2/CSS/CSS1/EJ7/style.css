@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+ul.menu {
+  width: 140px;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  border: 1px solid #ffc83d;
+}
+li {
+  border-bottom: #ffc83d 1px solid;
+}
+li:last-child {
+  border-bottom: 0px;
+}
+li > a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  padding: 5px;
+  background-color: #e5f3fe;
+}
+li > a:hover {
+  background-color: #c8e2f7;
+}
+li > a:before {
+  content: "👉 ";
+}

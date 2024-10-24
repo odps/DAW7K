@@ -1,0 +1,10 @@
+#first {
+  border: solid 1px black;
+  width: 150px;
+  float: left;
+}
+#second {
+  border: solid 1px red;
+  width: 150px;
+  float: right;
+}

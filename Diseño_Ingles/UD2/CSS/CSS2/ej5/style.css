@@ -1,0 +1,42 @@
+.heading {
+  text-align: center;
+  list-style-position: inside;
+  font-weight: bold;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+}
+
+.blue2-padded {
+  background-color: lightblue;
+  position: relative;
+  width: 33%;
+  height: 100%;
+}
+
+.yellow2-padded {
+  background-color: yellow;
+  position: relative;
+  width: 33%;
+  height: 66%;
+  left: 33%;
+  top: -100%;
+}
+
+.red2-padded {
+  background-color: red;
+  position: relative;
+  width: 33%;
+  height: 66%;
+  left: 66%;
+  top: -166%;
+}
+
+.green2-padded {
+  background-color: green;
+  position: relative;
+  width: 66%;
+  height: 33%;
+  left: 33%;
+  top: -166%;
+}
