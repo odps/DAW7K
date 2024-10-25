@@ -1,0 +1,13 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+  row-gap: 10px;
+  column-gap: 10px;
+}
+.container > div {
+  background-color: lightskyblue;
+}
