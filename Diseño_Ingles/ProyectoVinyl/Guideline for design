@@ -1,0 +1,111 @@
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+You have been comissioned a landing page for a vynil record store. The landing page has a menu with this elements
+
+- About
+
+- Shop
+
+- New
+
+- Contact
+
+- Blog
+
+The content in the page is in the attached file.
+(----
+Vynil Record Store is a store specializing in collectible records and vinyls of all formats
+and focused mainly on the 60s to 90s. We have special sections of records
+Spanish and British with the rarest records you can imagine as well as a system of
+disk search on request. And also, music books, comics and movie covers.
+Our philosophy is to recover forgotten records and take care of them as part of the audiovisual culture.
+We travel the planet to find that album you are looking for.
+----)
+
+Do a mockup to design the layout first.
+
+You need to use semantic tags. Use whatever you see fit,  It has to be responsive. Use a mobile first approach and relevant names for CSS.
+
+Punctuation:
+
+Mockup 1.5 point
+
+HTML 2.5 point (semantic tags, proper structure)
+
+CSS and Responsiveness 4.5 points (mobile first, proper names, media queries)
+
+Design (colours, fonts, etc) 1.5 point
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+### Landing Page Mockup for Vinyl Record Store
+
+#### Layout Design
+
+**Header:**
+- Logo (Top left)
+- Menu (Horizontal across the top)
+  - About
+  - Shop
+  - New
+  - Contact
+  - Blog
+
+---
+
+**Main Content Area:**
+- **Hero Section:**
+  - Large image of vinyl records or the store
+  - Welcome text or tagline
+
+- **Featured Products Section:**
+  - Grid of popular vinyl records for sale with images, titles, and prices
+
+- **About Section:**
+  - Brief description of the store
+
+- **New Arrivals Section:**
+  - Latest vinyl records, possibly with a "New" tag on each
+
+- **Call to Action Button:**
+  - "Shop Now" prominently placed
+
+---
+
+**Aside Area:**
+- **Gigs and Events Section:**
+  - Upcoming music events and gigs, displayed in a list format with dates and details
+
+---
+
+**Footer:**
+- Social Media Icons (Facebook, Instagram, Twitter, etc.)
+- Quick links to the menu items
+- Contact information
+
+---
+
+### Mobile Version Adjustments
+
+**Elements to Omit:**
+- Hero image may be reduced or omitted to save space
+- Featured Products Section can be simplified to a single scrollable row
+- Sidebar for gigs/events can be removed; instead, a dedicated section at the bottom may suffice
+
+**Elements to Include:**
+- Menu collapsible into a hamburger icon
+- Important sections like "New Arrivals" should be easily accessible
+- A simplified footer with essential social media links
+
+---
+
+### Tablet/Desktop Version Features
+
+**Elements to Include:**
+- Full-size hero image with overlay text
+- Grid layout for featured products, showcasing multiple items at once
+- Aside area for gigs/events prominently displayed
+- Detailed About section with images
+- Easily navigable footer with full menu links and social media icons
+
+This layout prioritizes a clean, engaging design that adapts well to different screen sizes, ensuring an optimal user experience across devices.
