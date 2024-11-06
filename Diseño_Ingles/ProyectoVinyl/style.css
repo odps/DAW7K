@@ -1,0 +1,28 @@
+* {
+  border: 1px solid black;
+}
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  height: 100vh;
+  margin: 0;
+}
+header {
+  background-color: aqua;
+  width: 100%;
+  display: block;
+  grid-row: 1;
+}
+main {
+  background-color: lightpink;
+  width: 100%;
+  display: block;
+  grid-row: 2;
+}
+footer {
+  background-color: lightgrey;
+  width: 100%;
+  display: block;
+  grid-row: 3;
+}
