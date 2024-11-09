@@ -1,4 +1,5 @@
 /*Base*/
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -24,7 +25,7 @@ body {
   grid-row: 3/10;
 }
 .footer {
-  background-color: #A39D9D;
+  background-color: #a39d9d;
   width: 100%;
   grid-row: 10;
   display: flex;
@@ -55,7 +56,7 @@ nav > ul > li {
   text-align: center;
 }
 nav > ul > li:hover {
-  background-color: #FEE527;
+  background-color: #fee527;
   box-shadow: -1px 3px 10px #949b9c;
   transition: 0.3s;
   cursor: pointer;
@@ -91,11 +92,13 @@ li > a {
   grid-column: 2;
   grid-row: 1/3;
   background-color: #d9d9d9;
+  text-align: center;
 
   font-weight: bold;
-  font-size: 48px;
-  text-align: center;
-  font-family: Helvetica, sans-serif;
+  font-family: "Just Another Hand", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 64px;
 }
 
 /*Main - Apartado de los albumes*/
@@ -131,12 +134,52 @@ li > a {
 }
 
 /*Footer*/
-.footer>p{
+.footer > p {
   padding: 10px;
   color: white;
 }
-.footer>img{
+.footer > img {
   width: 258px;
   height: 50px;
   margin-right: 20px;
+}
+
+/*Media Queries*/
+
+/*Tablet*/
+@media (max-width: 1024px) {
+  /*Header*/
+  nav > ul > li {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 100px;
+  }
+
+  /*Footer*/
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /*Main*/
+
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  .main-section-hero {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+  .main-aside-events {
+    display: block;
+  }
+
+  .main-section-albums > ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
 }
