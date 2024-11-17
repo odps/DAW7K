@@ -1,0 +1,295 @@
+/*Base*/
+@import url("https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 4fr 2fr 1fr;
+  gap: 10px;
+  height: 100vh;
+  width: 100vw;
+}
+.header {
+  background-color: #87ddec;
+  width: 100%;
+  grid-row: 1;
+}
+.main {
+  width: 100%;
+  grid-row: 2;
+}
+.about {
+  width: 100%;
+  grid-row: 3;
+  background-image: url(../imgs/about.jpg);
+}
+.footer {
+  background-color: #a39d9d;
+  width: 100%;
+  grid-row: 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*Modificaciones del header*/
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+.nav-li-item {
+  display: inline;
+  background-color: #fe279d;
+  margin-right: 5%;
+  padding: 1.5%;
+  border-radius: 30px;
+  width: 10em;
+  text-align: center;
+}
+.nav-li-item:hover {
+  background-color: #fee527;
+  box-shadow: -1px 3px 10px #949b9c;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.nav-a-item {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+#logo {
+  margin-top: 5%;
+  z-index: 1;
+}
+
+/*Modificaciones del main*/
+.main {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  height: 100%;
+}
+.main-section-hero {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  background-image: url(../imgs/main-textfilled.png);
+  background-size: cover;
+  min-height: 500px;
+}
+.main-aside-events {
+  grid-column: 2;
+  grid-row: 1/3;
+  background-color: #d9d9d9;
+
+  text-align: center;
+  font-weight: bold;
+  font-family: "Just Another Hand", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 64px;
+}
+
+.main-aside-events > p {
+  font-size: 2.5rem;
+}
+
+/*Main - Apartado de los albumes*/
+.main-section-albums {
+  grid-column: 1/-1;
+  grid-row: 3;
+  margin-top: 10px;
+  background-color: #65ae44;
+}
+.main-section-albums > ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+}
+.album-item {
+  margin: 1%;
+  display: flex;
+  flex-direction: row;
+}
+.album-item > * {
+  border-radius: 20px;
+  height: 220px;
+  width: 50%;
+  text-align: center;
+}
+.album-item > p {
+  font-weight: bold;
+  background-color: #d9d9d971;
+  padding: 5%;
+}
+
+/*About*/
+.about {
+  text-align: center;
+  font-weight: bold;
+  font-family: "Just Another Hand", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 48px;
+}
+.about > p {
+  display: inline-block;
+  background-color: #e8e1cf;
+  padding: 1px;
+  color: #228cc0;
+  border-radius: 30px;
+}
+
+/*Footer*/
+.footer > p {
+  padding: 10px;
+  color: white;
+}
+.footer > img {
+  width: 258px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+/*Media Queries*/
+/*Imagenes*/
+@media (max-width: 1150px) {
+  #logo {
+    width: 200px;
+    height: auto;
+  }
+}
+
+@media (max-width: 950px) {
+  #logo {
+    max-width: 150px;
+    height: auto;
+  }
+}
+
+/*Tablet*/
+@media (max-width: 1110px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 4fr 2fr 1fr;
+  }
+
+  /*Header*/
+  .nav-li-item {
+    width: 8em;
+  }
+
+  /*Footer*/
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /*About*/
+  .about {
+    font-size: 36px;
+  }
+
+  /*Main*/
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  .main-section-albums > ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/*Movil*/
+@media (max-width: 500px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  /*Header*/
+  .header nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .header nav ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  .header nav ul li {
+    margin: 5px 0;
+  }
+  .header nav img {
+    max-width: 100px;
+    height: auto;
+  }
+  #logo {
+    max-width: 100px;
+    height: auto;
+  }
+
+  /*Main*/
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  .main-section-hero {
+    display: block;
+    width: 100%;
+    min-height: 200px;
+    background-size: 430px 200px;
+  }
+  .main-aside-events {
+    display: block;
+    margin-top: 10px;
+  }
+  .main-section-albums > ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .main-section-albums .album-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  /*About*/
+  .about {
+    padding: 10px;
+  }
+
+  /*Footer*/
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+  }
+  .footer img {
+    max-width: 100px;
+    height: auto;
+    margin-top: 10px;
+  }
+}
