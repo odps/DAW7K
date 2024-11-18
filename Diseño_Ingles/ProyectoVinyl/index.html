@@ -8,11 +8,16 @@
   </head>
 
   <body>
-
     <header class="header">
       <nav>
-
         <img id="logo" src="./imgs/logo.jpg" alt="company_logo" />
+
+        <img
+          src="imgs/menu.png"
+          alt="menu-button"
+          id="menu-button"
+          onclick="openNav()"
+        />
 
         <ul>
           <li class="nav-li-item"><a class="nav-a-item" href="#">About</a></li>
@@ -24,15 +29,22 @@
           <li class="nav-li-item"><a class="nav-a-item" href="#">Blog</a></li>
         </ul>
 
-        <img id="profile" src="./imgs/profile.png" alt="user_profile_picture" />
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+            >&times;</a
+          >
+          <a href="#">About</a>
+          <a href="#">Shop</a>
+          <a href="#">New</a>
+          <a href="#">Contact</a>
+          <a href="#">Blog</a>
+        </div>
 
+        <img id="profile" src="./imgs/profile.png" alt="user_profile_picture" />
       </nav>
     </header>
 
-
-
     <main class="main">
-
       <section class="main-section-hero">
         <img src="./imgs/main-textfilled.png" alt="deals-banner" />
       </section>
@@ -47,7 +59,6 @@
       </aside>
 
       <section class="main-section-albums">
-
         <ul>
           <li class="album-item">
             <img src="./imgs/album1.jpeg" alt="album-cover" />
@@ -66,29 +77,26 @@
             <p>Album Title<br />Description</p>
           </li>
         </ul>
-
       </section>
-
     </main>
 
     <section class="about">
       <h2>About Us</h2>
       <hr />
       <p>
-      <strong>Disco</strong> is a store specializing in <em>collectible records</em> and <em>vinyls</em> of all
-      formats<br />
-      and focused mainly on the <strong>60s to 90s</strong>. We have special sections of
-      records<br />
-      <strong>Spanish</strong> and <strong>British</strong> with the rarest records you can imagine as well as a
-      system of<br />
-      disk search on request. And also, <em>music books</em>, <em>comics</em> and <em>movie
-      covers</em>.<br />
-      Our philosophy is to recover forgotten records and take care of them as
-      part of the <strong>audiovisual culture</strong>.<br />
-      We travel the planet to find that album you are looking for.<br />
+        <strong>Disco</strong> is a store specializing in
+        <em>collectible records</em> and <em>vinyls</em> of all formats<br />
+        and focused mainly on the <strong>60s to 90s</strong>. We have special
+        sections of records<br />
+        <strong>Spanish</strong> and <strong>British</strong> with the rarest
+        records you can imagine as well as a system of<br />
+        disk search on request. And also, <em>music books</em>,
+        <em>comics</em> and <em>movie covers</em>.<br />
+        Our philosophy is to recover forgotten records and take care of them as
+        part of the <strong>audiovisual culture</strong>.<br />
+        We travel the planet to find that album you are looking for.<br />
       </p>
     </section>
-
 
     <footer class="footer">
       <p>
@@ -101,6 +109,13 @@
       <img src="imgs/social.png" alt="social-media" />
     </footer>
 
-
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "40%";
+      }
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
   </body>
 </html>
