@@ -10,11 +10,13 @@
 body {
   display: flex;
   flex-direction: column;
+  background-color: #ff9900;
 }
 
 /*HEADER*/
 header {
   background-color: #87ddec;
+  box-shadow: 1px 1px 5px #228cc0;
 }
 
 nav {
@@ -33,10 +35,15 @@ nav > * {
 #logo {
   height: 100%;
   width: 50%;
+  border-radius: 50%;
+  box-shadow: 1px 1px 10px #fe279d;
 }
 
 #profile {
   width: 15%;
+
+  border-radius: 50%;
+  background-color: #ffffff;
 }
 
 /* Estilos de la lista menu/nav */
@@ -52,6 +59,7 @@ nav > ul {
 .nav-li-item {
   display: inline;
   background-color: #fe279d;
+  outline: 1px solid #228cc0;
   text-align: center;
   width: 175%;
   border-radius: 30px;
@@ -79,6 +87,7 @@ nav > ul {
   justify-content: center;
   align-items: center;
   margin: 10px 0;
+
 }
 
 .main-section-hero > img {
@@ -89,17 +98,30 @@ nav > ul {
 
 /*Eventos*/
 .main-aside-events {
+  width: 100%;
   background-color: #d9d9d9;
   margin-top: 10px;
+
   text-align: center;
-  width: 100%;
   font-family: "Just Another Hand", cursive;
-  font-size: 5.5rem;
-  font-weight: 400;
+  font-size: 4rem;
 }
 
 .main-aside-events > p {
   font-size: 3.5rem;
+}
+
+.main-aside-events > p:hover {
+  background-color: #a39d9d;
+  transition: 0.5s;
+}
+
+.main-aside-events > h2{
+  margin-top: 2%;
+}
+
+h2{
+  -webkit-text-stroke: 2px #fff;
 }
 
 /*Main - Apartado de los albumes*/
@@ -111,6 +133,8 @@ nav > ul {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  box-shadow: 0px 0px 10px #335722;
 }
 
 .main-section-albums > ul {
@@ -148,20 +172,22 @@ nav > ul {
   text-align: center;
   font-weight: bold;
   font-family: "Just Another Hand", cursive;
-  font-weight: 400;
   font-style: normal;
-  font-size: 36px;
+  font-size: 2.5em;
+
   background-image: url("./imgs/about.jpg");
   background-size: fill;
 }
 
 .about > p {
   display: inline-block;
+  border-radius: 30px;
   padding: 1px;
   background-color: #e8e1cfe7;
   color: #228cc0;
-  font-size: 42px;
-  border-radius: 30px;
+
+  font-size: 24px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 /*Footer*/
@@ -290,5 +316,6 @@ nav > ul {
 
   #footerLogo {
     display: block;
+    width: 10%;
   }
 }
