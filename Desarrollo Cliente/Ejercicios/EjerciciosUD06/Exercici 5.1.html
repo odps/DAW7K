@@ -45,6 +45,7 @@
     <a id="enlace_3" href="#">Ocultar continguts</a>
   </body>
 
+  <!-- VERSION ADDEVENTLISTENER DOM NIVELL 2
   <script type="text/javascript">
     const enlaces = document.querySelectorAll("a");
     const contenidos = document.querySelectorAll("p");
@@ -64,9 +65,31 @@
       });
     });
   </script>
+ -->
+
+  <!-- VERSION ONLOAD NIVELL 0 -->
 
   <script type="text/javascript">
-    let enlace = document.getElementById("enlace_1");
-    let para = document.getElementById("contenidos_1");
+    window.onload = ocultarContenidos;
+
+    function ocultarContenidos() {
+      var enlaces = document.getElementsByTagName("a");
+      var contenidos = document.getElementsByTagName("p");
+      for (var i = 0; i < enlaces.length; i++) {
+        enlaces[i].onclick = function () {
+          var numId = this.id[this.id.length - 1];
+          var paraId = "contenidos_" + numId;
+          var parrafo = document.getElementById(paraId);
+          if (this.innerHTML == "Ocultar continguts") {
+            parrafo.style.display = "none";
+            this.innerHTML = "Mostrar continguts";
+          } else {
+            this.innerHTML = "Ocultar continguts";
+            parrafo.style.display = "block";
+          }
+          return false;
+        };
+      }
+    }
   </script>
 </html>
