@@ -38,7 +38,7 @@ nav > * {
   border-radius: 50%;
   box-shadow: 1px 1px 10px #fe279d;
 
-  order:1;
+  order: 1;
 }
 
 #profile {
@@ -47,15 +47,15 @@ nav > * {
   border-radius: 50%;
   background-color: #ffffff;
 
-  order:2;
+  order: 2;
 }
 
 /*----------------- SIDE NAV*/
 
-#menu-button{
+#menu-button {
   width: 10%;
 }
-#menu-button:hover{
+#menu-button:hover {
   cursor: pointer;
 }
 
@@ -64,12 +64,12 @@ nav > * {
   width: 0;
   position: fixed;
   z-index: 1;
-  top: 0; 
+  top: 0;
   left: 0;
-  background-color: #228bc0cc;
+  background-color: #228bc0cb;
   overflow-x: hidden;
-  padding-top: 15%;
-  transition: 0.5s; 
+  padding-top: 33%;
+  transition: 0.5s;
   margin: 0px;
 }
 
@@ -84,6 +84,13 @@ nav > * {
 
 .sidenav a:hover {
   color: #fe279d;
+  background-color: #228cc0;
+  font-size: 34px;
+}
+
+.sidenav a:hover:first-child {
+  color: #e62020;
+  background-color: #228bc000;
 }
 
 .sidenav .closebtn {
@@ -130,7 +137,6 @@ nav > ul {
   color: black;
 }
 
-
 /*MAIN*/
 .main {
   width: 100%;
@@ -139,7 +145,6 @@ nav > ul {
   justify-content: center;
   align-items: center;
   margin: 10px 0;
-
 }
 
 .main-section-hero > img {
@@ -149,6 +154,11 @@ nav > ul {
 }
 
 /*Eventos*/
+
+h2 {
+  -webkit-text-stroke: 2px #fff;
+}
+
 .main-aside-events {
   width: 100%;
   background-color: #d9d9d9;
@@ -156,24 +166,22 @@ nav > ul {
 
   text-align: center;
   font-family: "Just Another Hand", cursive;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .main-aside-events > p {
   font-size: 3.5rem;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.main-aside-events > h2 {
+  margin-top: 2%;
 }
 
 .main-aside-events > p:hover {
   background-color: #a39d9d;
   transition: 0.5s;
-}
-
-.main-aside-events > h2{
-  margin-top: 2%;
-}
-
-h2{
-  -webkit-text-stroke: 2px #fff;
 }
 
 /*Main - Apartado de los albumes*/
@@ -189,13 +197,6 @@ h2{
   box-shadow: 0px 0px 10px #335722;
 }
 
-.main-section-albums > ul {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  padding: 3%;
-}
-
 .album-item {
   display: grid;
   margin: 1%;
@@ -209,6 +210,13 @@ h2{
   width: 100%;
   border-radius: 30px;
   text-align: center;
+}
+
+.main-section-albums > ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 3%;
 }
 
 .album-item > p {
@@ -239,7 +247,7 @@ h2{
   color: #228cc0;
 
   font-size: 24px;
-  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 /*Footer*/
@@ -265,6 +273,17 @@ h2{
 
 /*Tablet*/
 @media (min-width: 500px) {
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  nav > ul {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
   .header {
     height: 150px;
   }
@@ -272,12 +291,19 @@ h2{
   .mySidenav {
     display: none;
   }
+
+  .nav-li-item {
+    margin: 1%;
+    padding: 2%;
+  }
+
+  .main-section-albums > ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   #menu-button {
     display: none;
-  }
-  nav {
-    flex-direction: row;
-    justify-content: space-between;
   }
 
   #logo {
@@ -295,22 +321,6 @@ h2{
     min-width: 52px;
     max-width: 64px;
     margin: 1%;
-  }
-
-  nav > ul {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-  }
-
-  .nav-li-item {
-    margin: 1%;
-    padding: 2%;
-  }
-
-  .main-section-albums > ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -336,9 +346,6 @@ h2{
     margin: 0;
     padding: 0;
   }
-  .main-section-hero > img {
-    margin-bottom: -5px;
-  }
 
   .main-aside-events {
     grid-column: 2/3;
@@ -355,15 +362,21 @@ h2{
     padding: 0;
   }
 
+  .main-section-hero > img {
+    margin-bottom: -5px;
+  }
+
   .main-section-albums > ul {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  /*footer*/
+
   .footer {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 
     background-color: #a39d9d;
     color: white;
