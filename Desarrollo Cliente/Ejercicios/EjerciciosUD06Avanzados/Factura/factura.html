@@ -99,9 +99,9 @@
         <select name="producto" id="producto">
           <option selected="selected">Seleccione un producto...</option>
         </select>
-        <input type="text" id="precio" disabled />
+        <input type="text" id="precio" readonly />
         <input type="text" id="unidades" />
-        <input type="text" id="importe" disabled />
+        <input type="text" id="importe" readonly />
         <button class="verde" type="button">Añadir a la cesta</button>
       </div>
       <hr />
@@ -150,6 +150,8 @@
 
       //--------------------------------------------------------------------------------
 
+      //DAR DE ALTA PRODUCTOS
+
       let alta = document.querySelector(".verde");
       let selectProducto = document.querySelector("#producto");
       let productos = {};
@@ -160,12 +162,13 @@
 
         let option = document.createElement("option");
         option.text = producto2;
-        selectProducto.add(option);
 
         productos[producto2] = {
           nombre: producto2,
           precio: precio2,
         };
+
+        selectProducto.add(option);
         mostrar();
       });
 
@@ -175,6 +178,47 @@
         console.dir(productos[producto]);
         let precio = productos[producto].precio;
         document.querySelector("#precio").value = precio;
+      });
+
+      // ---------------------------------------------------------------------------
+
+      // AÑADIR PRODUCTOS A LA TABLA
+
+      let unidades = document.querySelector("#unidades");
+      let importe = document.querySelector("#importe");
+
+      unidades.addEventListener("change", function () {
+        let precio = document.querySelector("#precio").value;
+        let unidades = document.querySelector("#unidades").value;
+        let importe = precio * unidades;
+        document.querySelector("#importe").value = importe;
+      });
+
+      let añadir = document.querySelectorAll(".verde")[1];
+      let tbody = document.querySelector("tbody");
+
+      añadir.addEventListener("click", function () {
+        let producto = selectProducto.value;
+        let precio = document.querySelector("#precio").value;
+        let unidades = document.querySelector("#unidades").value;
+        let importe = document.querySelector("#importe").value;
+
+        let row = tbody.insertRow();
+        row.insertCell().textContent = producto;
+        row.insertCell().textContent = precio;
+        row.insertCell().textContent = unidades;
+        row.insertCell().textContent = importe;
+        row.querySelector("td:nth-child(4)").classList.add("importe");
+
+        let tfoot = document.querySelector("#tfoot");
+        let footerTotal = tfoot.querySelector("td:nth-child(3)");
+
+        let importes = document.querySelector(".importe");
+        let total = [...importes].reduce(
+          (acc, val) => acc + parseInt(val.textContent),
+          0
+        );
+        footerTotal.textContent = total;
       });
     </script>
   </body>

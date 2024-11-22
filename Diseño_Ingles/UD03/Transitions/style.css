@@ -1,0 +1,61 @@
+body {
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+}
+
+.fade {
+  width: 250px;
+  aspect-ratio: 4/3;
+  background-color: #b8860b;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: background-color 1s, color 1s;
+}
+
+.fade:hover {
+  background-color: #b8870b00;
+  color: black;
+}
+
+.square {
+  width: 250px;
+  aspect-ratio: 4/3;
+  background-color: #0bb89b;
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: border-radius 1s;
+}
+
+.square:hover {
+  border-radius: 50%;
+}
+
+.inset-border {
+  width: 250px;
+  aspect-ratio: 4/3;
+  background-color: #db3c99;
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: outline 0.5s;
+}
+
+.inset-border:hover {
+  outline: 10px solid #792054;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video - Oscar Pereira</title>
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header><h1>Header</h1></header>
+    <nav><h1>Navigator</h1></nav>
+    <main>
+      <article>
+        <h1>Insertando vídeo en una web</h1>
+
+        <p>Video almacenado en el mismo servidor que la web</p>
+
+        <div class="article-video-container">
+          <video controls>
+            <source src="./video/recetapollo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <p>Video almacenado en un servidor externo</p>
+
+        <div class="article-video-container">
+          <video controls>
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
