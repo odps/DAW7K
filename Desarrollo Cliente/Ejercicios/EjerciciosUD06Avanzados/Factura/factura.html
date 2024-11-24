@@ -69,6 +69,9 @@
         border: black 4px solid;
         display: none;
       }
+      #producto{
+        min-width: 250px;
+      }
     </style>
   </head>
 
@@ -78,6 +81,7 @@
         <img onclick="mostrar()" src="carrito2.jpg" width="75" />Carrito de la
         compra
       </h1>
+
       <div id="alta">
         <h1>Alta de articulo :</h1>
         <p>Producto&nbsp;<input type="text" id="producto2" /></p>
@@ -92,6 +96,7 @@
           <b>X</b>
         </p>
       </div>
+      
       <div style="margin: 10px">
         <pre>
      Producto                   Precio                    Unidades              Importe</pre
@@ -135,91 +140,6 @@
       </div>
     </div>
 
-    <script>
-      // Muestra y oculta la division de alta de productos
-      function mostrar() {
-        var e = document.getElementById("alta"); //recoge todo el elemento alta
-        if (e.style.display == "block") {
-          //si se ve
-          e.style.display = "none"; //que no se vea
-        } else {
-          //si no
-          e.style.display = "block"; //que se vea
-        }
-      }
-
-      //--------------------------------------------------------------------------------
-
-      //DAR DE ALTA PRODUCTOS
-
-      let alta = document.querySelector(".verde");
-      let selectProducto = document.querySelector("#producto");
-      let productos = {};
-
-      alta.addEventListener("click", function () {
-        let producto2 = document.querySelector("#producto2").value;
-        let precio2 = document.querySelector("#precio2").value;
-
-        let option = document.createElement("option");
-        option.text = producto2;
-
-        productos[producto2] = {
-          nombre: producto2,
-          precio: precio2,
-        };
-
-        selectProducto.add(option);
-        mostrar();
-      });
-
-      selectProducto.addEventListener("change", function () {
-        let producto = selectProducto.value;
-        console.dir(producto);
-        console.dir(productos[producto]);
-        let precio = productos[producto].precio;
-        document.querySelector("#precio").value = precio;
-      });
-
-      // ---------------------------------------------------------------------------
-
-      // AÑADIR PRODUCTOS A LA TABLA
-
-      let unidades = document.querySelector("#unidades");
-      let importe = document.querySelector("#importe");
-
-      unidades.addEventListener("change", function () {
-        let precio = document.querySelector("#precio").value;
-        let unidades = document.querySelector("#unidades").value;
-        let importe = precio * unidades;
-        document.querySelector("#importe").value = importe;
-      });
-
-      let añadir = document.querySelectorAll(".verde")[1];
-      let tbody = document.querySelector("tbody");
-
-      añadir.addEventListener("click", function () {
-        let producto = selectProducto.value;
-        let precio = document.querySelector("#precio").value;
-        let unidades = document.querySelector("#unidades").value;
-        let importe = document.querySelector("#importe").value;
-
-        let row = tbody.insertRow();
-        row.insertCell().textContent = producto;
-        row.insertCell().textContent = precio;
-        row.insertCell().textContent = unidades;
-        row.insertCell().textContent = importe;
-        row.querySelector("td:nth-child(4)").classList.add("importe");
-
-        let tfoot = document.querySelector("#tfoot");
-        let footerTotal = tfoot.querySelector("td:nth-child(3)");
-
-        let importes = document.querySelector(".importe");
-        let total = [...importes].reduce(
-          (acc, val) => acc + parseInt(val.textContent),
-          0
-        );
-        footerTotal.textContent = total;
-      });
-    </script>
+    <script src="scripts.js"></script>
   </body>
 </html>
