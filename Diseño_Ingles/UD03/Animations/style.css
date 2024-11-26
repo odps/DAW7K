@@ -1,0 +1,49 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.reloj {
+  width: 500px;
+  aspect-ratio: 1/1;
+  border: 5px solid black;
+  border-radius: 100%;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.segundos {
+  height: 45%;
+  width: 2.5px;
+  background-color: black;
+  margin-bottom: 50%;
+  transition-duration: 10s;
+  transform-origin: center bottom;
+}
+.minutos {
+  height: 30%;
+  width: 5px;
+  background-color: black;
+  margin-bottom: 50%;
+  margin-left: -3.5px;
+}
+.horas {
+  height: 15%;
+  width: 7.5px;
+  background-color: black;
+  margin-bottom: 50%;
+  margin-left: -6.5px;
+}
+.segundos,
+.minutos,
+.horas {
+  transform: rotate(360deg);
+}
+
+@keyframes {
+  0% {
+  }
+  100% {
+  }
+}

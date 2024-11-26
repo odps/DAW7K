@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabla DNI</title>
+  </head>
+  <style>
+    th, td {
+      border: 1px solid black;
+    }
+    button {
+      background-color: black;
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th><button id="nombre">Nombre</button></th>
+          <th><button id="apellido">Apellido</button></th>
+          <th><button id="dni">DNI</button></th>
+        </tr>
+      </thead>
+      <tbody id="tabla"></tbody>
+    </table>
+  </body>
+  <script src="script.js"></script>
+</html>
