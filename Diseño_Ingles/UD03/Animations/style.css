@@ -18,8 +18,12 @@ body {
   width: 2.5px;
   background-color: black;
   margin-bottom: 50%;
-  transition-duration: 10s;
+
   transform-origin: center bottom;
+  animation-name: mueve;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 .minutos {
   height: 30%;
@@ -27,6 +31,11 @@ body {
   background-color: black;
   margin-bottom: 50%;
   margin-left: -3.5px;
+  transform-origin: center bottom;
+  animation-name: mueve;
+  animation-duration: 3600s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 .horas {
   height: 15%;
@@ -34,16 +43,18 @@ body {
   background-color: black;
   margin-bottom: 50%;
   margin-left: -6.5px;
-}
-.segundos,
-.minutos,
-.horas {
-  transform: rotate(360deg);
+  transform-origin: center bottom;
+  animation-name: mueve;
+  animation-duration: 86400s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
-@keyframes {
-  0% {
+@keyframes mueve {
+  from {
+    transform: rotate(0deg);
   }
-  100% {
+  to {
+    transform: rotate(360deg);
   }
 }
