@@ -1,81 +1,70 @@
 <?php
 require_once 'class_db.php';
 
-class cuentaDAO
+class cuentaDAO extends db
 {
+    public function inserir($cuenta)
+    {
+        $query = "INSERT INTO cuenta (codigo, saldo, cliente) VALUES ('" . $cuenta->getCodigo() . "',
+            '" . $cuenta->getSaldo() . "', '" . $cuenta->getCliente() . "');";
 
-	public function inserir($cuenta)
-	{
+        $resultado = $this->consulta($query);
+        $this->close();
 
-		$query = "insert into cuenta (codigo, saldo, cliente) values ('" . $cuenta->getCodigo() . "',
-			'" . $cuenta->getSaldo() . "', '" . $cuenta->getCliente() . "');";
+        return $resultado;
+    }
 
-		$con = new db();
-		$resultado = $con->consulta($query);
-		$con->close();
+    public function eliminar($id)
+    {
+        $query = "DELETE FROM cuenta WHERE id = '" . $id . "';";
 
-		return $resultado;
-	}
+        $resultado = $this->consulta($query);
+        $this->close();
 
-	public function eliminar($id)
-	{
+        return $resultado;
+    }
 
-		$query = "delete from cuenta where id = '" . $id . "';";
+    public function buscarId($id)
+    {
+        $query = "SELECT * FROM cuenta WHERE id = '" . $id . "';";
 
-		$con = new db();
-		$resultado = $con->consulta($query);
-		$con->close();
+        $consulta = $this->consulta($query);
+        $this->close();
 
-		return $resultado;
-	}
+        $row = $consulta->fetch_object();
 
-	public function buscarId($id)
-	{
+        if (isset($row)) {
+            $cuenta = new cuenta($row->codigo, $row->saldo, $row->cliente);
+            $cuenta->setId($row->id);
 
-		$query = "select * from cuenta where id = '" . $id . "';";
+            return $cuenta;
+        }
+    }
 
-		$con = new db();
-		$consulta = $con->consulta($query);
-		$con->close();
+    public function verCuentas()
+    {
+        $query = "SELECT * FROM cuenta;";
 
-		$row = $consulta->fetch_object();
+        $consulta = $this->consulta($query);
+        $this->close();
 
-		if (isset($row)) {
-			$cuenta = new cuenta($row->codigo, $row->saldo, $row->cliente);
-			$cuenta->setId($row->id);
+        $arrayCuentas = array();
+        foreach ($consulta as $row) {
+            $cuenta = new cuenta($row["codigo"], $row["saldo"], $row["cliente"]);
+            $cuenta->setId($row["id"]);
+            array_push($arrayCuentas, $cuenta);
+        }
 
-			return $cuenta;
-		}
-	}
+        return $arrayCuentas;
+    }
 
-	public function verCuentas()
-	{
-		$query = "SELECT * FROM cuenta;";
+    public function editar(int $id, string $codigo, int $saldo, int $cliente)
+    {
+        $query = "UPDATE cuenta SET codigo = '" . $codigo . "', saldo = '" . $saldo . "', cliente = '" . $cliente . "' WHERE id = '" . $id . "';";
 
-		$con = new db();
-		$consulta = $con->consulta($query);
-		$con->close();
+        $resultado = $this->consulta($query);
+        $this->close();
 
-		$arrayCuentas = array();
-		foreach ($consulta as $row) {
-			$cuenta = new cuenta($row["codigo"], $row["saldo"], $row["cliente"]);
-			$cuenta->setId($row["id"]);
-			array_push($arrayCuentas, $cuenta);
-		}
-
-		return $arrayCuentas;
-	}
-
-	public function editar(int $id, string $codigo, int $saldo, int $cliente)
-	{
-
-		$query = "update cuenta set codigo = '" . $codigo . "', saldo = '" . $saldo . "', cliente = '" . $cliente . "' where id = '" . $id . "';";
-
-
-		$con = new db();
-		$resultado = $con->consulta($query);
-		$con->close();
-
-		return $resultado;
-	}
+        return $resultado;
+    }
 }

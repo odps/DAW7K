@@ -39,6 +39,9 @@ class Cliente
 
     public function setFechaN($fechaN)
     {
+        if (!$fechaN instanceof DateTime) {
+            $fechaN = new DateTime($fechaN);
+        }
         $this->fechaN = $fechaN;
     }
 

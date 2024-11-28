@@ -26,10 +26,13 @@
             <tr>
                 <td>Cliente</td>
                 <td>
-                    //HAY QUE ARREGLAR EL PROBLEMA AL EDITAR LA CUENTA YA QUE ASI PASA EL STRING Y CLIENTE ES UN ID
                     <select name="cliente">
-                        <?php foreach ($arrayCuentas as $cuenta) {
-                            echo "<option>" . $cuenta->getNombreApellidoCliente() . "</option>";
+                        <?php foreach ($arrayClientes as $clientes) {
+                            if($cuenta->getId() == $_REQUEST['id'] && $cuenta->getCliente() == $clientes->getId()){
+                                echo "<option selected value='$clientes->id'>" . $cuenta->getNombreApellidoCliente() . "</option>";
+                                continue;
+                            }
+                            echo "<option value='$clientes->id'>" . $clientes->getNombreApellido() . "</option>";
                         }
                         ?>
                     </select>

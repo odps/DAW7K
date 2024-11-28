@@ -28,7 +28,8 @@
             </tr>
             <tr>
                 <td>Fecha de Nacimiento</td>
-                <td><input type='date' name='fechaN' size='50' value="<?php echo $cliente->getFechaN(); ?>" /></td>
+                <td><input type='date' name='fechaN' size='50' value="<?php echo ($cliente->getFechaN())->format('d-m-Y'); ?>" /></td>
+
             </tr>
         </table><br />
         <input type='submit' name='submit' value='Editar' />
