@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas - Oscar Pereira</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="cuadricula" width="500" height="500"></canvas>
+    <br />
+    <canvas id="paralelas" width="500" height="500"></canvas>
+    <br />
+  </body>
+  <script>
+    const canvas = document.getElementById("cuadricula");
+    const ctx = canvas.getContext("2d");
+
+    ctx.lineWidth = 5;
+
+    for (let i = 10; i < 500; i += 50) {
+      ctx.beginPath();
+
+      //Punto de inicio
+      ctx.moveTo(0, i);
+      //Punto final
+      ctx.lineTo(canvas.width, i);
+      //Pintar
+      ctx.stroke();
+    }
+    for (let i = 10; i < 500; i += 50) {
+      ctx.beginPath();
+
+      //Punto de inicio
+      ctx.moveTo(i, 0);
+      //Punto final
+      ctx.lineTo(i, canvas.height);
+      //Pintar
+      ctx.stroke();
+    }
+
+    // Ejercicio 2 - Paralelas cambio color
+    const canvasParalelas = document.getElementById("paralelas");
+    const ctxP = canvasParalelas.getContext("2d");
+    const colores = ["red", "green", "black", "grey"];
+
+    ctxP.lineWidth = 5;
+
+    let colorCount = 0;
+    for (let i = 10; i < 400; i += 100) {
+      ctxP.beginPath();
+      //Punto de inicio
+      ctxP.moveTo(i, 0);
+      //Punto final
+      ctxP.lineTo(i, canvasParalelas.height);
+      //Pintar
+      ctxP.strokeStyle = colores[colorCount];
+      colorCount++;
+      ctxP.stroke();
+    }
+
+    //Ejercicio 3 - Curvas
+  </script>
+</html>
