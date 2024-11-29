@@ -40,7 +40,7 @@
       constructor(nombre, precio) {
         this.#nombre = nombre;
         this.#precio = precio;
-        this.#cantidad = 0;
+        this.#cantidad = 1;
       }
 
       get nombre() {
@@ -71,9 +71,10 @@
         this.#cantidad++;
       }
     }
+    let carrito = new Map();
 
     window.onload = function () {
-      let carrito = new Map();
+
 
       // Variables
       const baseDeDatos = [
@@ -147,22 +148,43 @@
         });
       }
 
+      const vaciar = document.getElementById('boton-vaciar');
+      vaciar.addEventListener('click', vaciarCarrito);
+
       // Inicio
       renderizarProductos();
     };
-
     function anyadirProductoAlCarrito(event) {
-      const btnAdd = document.querySelectorAll(".btn-primary");
-
-      console.log("pinchado");
+      //Aumenta la cantidad de productos al pinchar el boton
       let parent = event.target.parentNode;
       let itemName = parent.querySelector(".card-title").innerText;
       let itemPrice = parseFloat(parent.querySelector(".card-text").innerText);
       let item = new Producto(itemName, itemPrice);
-
+      //Si el item ya existe simplementa incrementa su cantidad
       if (carrito.has(item.nombre)) {
-        item.aumentaCantidad();
+        carrito.get(item.nombre).aumentaCantidad();
       } else carrito.set(item.nombre, item);
+      //Actualiza la lista con los valores almacenados dentro del objeto
+      let cart = document.querySelector("#carrito");
+      cart.innerHTML = '';
+      crearLi(carrito);
+      //Actualiza el total del carrito
+      let total = document.getElementById('total');
+      let acc = 0;
+      let carritoItem = carrito.forEach((obj)=>{
+        acc += (obj.precio * obj.cantidad);
+      });
+      total.innerText = acc.toFixed(2);
+    }
+
+    function vaciarCarrito() {
+
+      const cart = document.getElementById('carrito');
+      let total = document.getElementById('total');
+      carrito = new Map();
+
+      cart.innerHTML = '';
+      total.innerHTML = '';
     }
 
     function crearLi(container) {
@@ -173,10 +195,8 @@
         let li = document.createElement("li");
         li.innerText = `${item.cantidad} x ${item.nombre} - ${item.precio}€`;
         fragment.appendChild(li);
-        cart.appendChild(fragment);
       });
+        cart.appendChild(fragment);
     }
-
-    crearLi(carrito);
   </script>
 </html>
