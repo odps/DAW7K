@@ -1,0 +1,64 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+}
+
+@keyframes write {
+    from {
+        stroke-dasharray: 500;
+    }
+    to {
+        stroke-dasharray: 0;
+    }
+}
+
+@keyframes discplay {
+    from {
+        stroke-dasharray: 50;
+    }
+    to {
+        stroke-dasharray: 100;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-90deg);
+    }
+}
+
+.disco {
+    opacity: 0;
+    stroke-dasharray: 0;
+    animation: write 5.5s 5s ease-out reverse forwards, fadeIn 5s 5s ease-out forwards;
+    filter: url(#shadow);
+}
+
+.disc-lines {
+    opacity: 15%;
+    animation: fadeIn 5s linear reverse, discplay 10s 5s infinite linear;
+}
+
+.needle-svg {
+    margin-bottom: 23%;
+    margin-left: -10%;
+    filter: url(#shadow);
+    transform-origin: bottom center;
+    animation: rotate 5s ease-out forwards;
+}

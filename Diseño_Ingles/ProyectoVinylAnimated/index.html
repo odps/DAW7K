@@ -41,12 +41,16 @@
     </svg>
 </div>
 
-<audio id="background-music" src="path/to/your/music/file.mp3" preload="auto"></audio>
+<audio id="background-music" src="voyager.mp3" preload="auto"></audio>
 
 <script>
     window.addEventListener('load', function() {
         var audio = document.getElementById('background-music');
         audio.play();
+
+        setTimeout(function() {
+            window.location.href = 'main.html';
+        }, 15000);
     });
 </script>
 </body>
