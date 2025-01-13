@@ -1,0 +1,11 @@
+@mixin border-radius($selector, $radius) {
+  #{$selector} {
+    border-top-left-radius: $radius;
+    -moz-border-radius-topleft: $radius;
+    -webkit-border-top-left-radius: $radius;
+  }
+}
+
+@include border-radius("#navbar li", 10px);
+@include border-radius("#footer", 5px);
+@include border-radius("#sidebar", 8px);

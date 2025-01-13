@@ -1,0 +1,16 @@
+@mixin border-radius($tamano) {
+  border-radius: $tamano;
+  -moz-border-radius: $tamano;
+  -webkit-border-radius: $tamano;
+}
+
+$tamanoFooter: 5px;
+$tamanoSideB: 8px;
+
+#footer {
+  @include border-radius($tamanoFooter);
+}
+
+#sidebar {
+  @include border-radius($tamanoSideB);
+}

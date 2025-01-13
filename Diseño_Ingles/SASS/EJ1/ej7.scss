@@ -1,0 +1,20 @@
+@mixin transformaciones($tipo, $valor) {
+  @if $tipo == "scale" {
+    transform: scale($valor);
+    -webkit-transform: scale($valor);
+    -ms-transform: scale($valor);
+  } @else if $tipo == "rotate" {
+    transform: rotate($valor);
+    -webkit-transform: rotate($valor);
+    -ms-transform: rotate($valor);
+  }
+}
+
+.escalada {
+  @include transformaciones("scale", (2, 3));
+}
+
+h1 {
+  color: blue;
+  @include transformaciones("rotate", 22deg);
+}

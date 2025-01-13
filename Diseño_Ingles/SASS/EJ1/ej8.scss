@@ -1,0 +1,21 @@
+@mixin encabezados($tamano) {
+  h1 {
+    font-size: $tamano;
+  }
+  h2 {
+    font-size: $tamano - 0.2em;
+  }
+  h3 {
+    font-size: $tamano - 0.5em;
+  }
+}
+
+@include encabezados(1.5em);
+
+@media (min-width: 800px) {
+  @include encabezados(2em);
+}
+
+@media (min-width: 1200px) {
+  @include encabezados(2.5em);
+}

@@ -1,0 +1,12 @@
+.escalada {
+  transform: scale(2, 3);
+  -webkit-transform: scale(2, 3);
+  -ms-transform: scale(2, 3);
+}
+
+h1 {
+  color: blue;
+  transform: rotate(22deg);
+  -webkit-transform: rotate(22deg);
+  -ms-transform: rotate(22deg);
+}/*# sourceMappingURL=ej7.css.map */

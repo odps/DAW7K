@@ -1,0 +1,15 @@
+@mixin botones($color) {
+  background-color: $color;
+  color: white;
+  width: 30px;
+  border-radius: 10px;
+}
+
+.btn {
+  &-a {
+    @include botones(blue);
+  }
+  &-b {
+    @include botones(black);
+  }
+}
