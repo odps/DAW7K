@@ -1,0 +1,11 @@
+@function cambiaColor($color, $sat, $light) {
+  $hue: hue($color);
+  @return hsl($hue, $sat, $light);
+}
+
+$color: green;
+
+.banner {
+  background-color: green;
+  color: cambiaColor($color, 10%, 40%);
+}

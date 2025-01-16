@@ -1,0 +1,12 @@
+.item {
+  position: absolute;
+  margin-right: 10px;
+
+  $i: 0;
+  @while $i < 3 {
+    &-#{$i} {
+      top: $i * 30px;
+    }
+    $i: $i + 1;
+  }
+}

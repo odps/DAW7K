@@ -1,0 +1,12 @@
+@function exponente($a, $b) {
+  @if ($b == 0) {
+    @return 1;
+  } @else {
+    @return $a * exponente($a, $b - 1);
+  }
+}
+
+.sidebar {
+  float: right;
+  margin-left: exponente(5, 5) px;
+}

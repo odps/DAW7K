@@ -1,0 +1,7 @@
+@function sumaTres($a, $b, $c) {
+  @return $a + $b + $c;
+}
+
+.gfg {
+  width: sumaTres(30, 50, 20) px;
+}

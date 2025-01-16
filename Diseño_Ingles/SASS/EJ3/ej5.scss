@@ -1,0 +1,10 @@
+@mixin booleanoColor($color, $bool) {
+  @if ($bool) {
+    border-radius: 4px;
+  }
+  color: $color;
+}
+
+.div {
+  @include booleanoColor(red, true);
+}

@@ -1,0 +1,9 @@
+$lengths: 50px, 30px, 100px;
+
+@function devuelveMax($arr) {
+  @return max($arr...);
+}
+
+.gfg {
+  width: devuelveMax($lengths);
+}

@@ -1,0 +1,13 @@
+.message, .message-item {
+  color: #911111;
+  font-family: "Roboto", sans-serif;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 2px;
+  font-size: 0.9rem;
+  font-weigth: bold;
+  font-family: sans-serif;
+}
+.message:hover, .message-item:hover {
+  background: #119191;
+}/*# sourceMappingURL=ej8.css.map */

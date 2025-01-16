@@ -1,0 +1,16 @@
+.message {
+  color: #911111;
+  font-family: "Roboto", sans-serif;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 2px;
+  font-size: 0.9rem;
+  font-weigth: bold;
+  font-family: sans-serif;
+  &:hover {
+    background: complement($color: #911111);
+  }
+  &-item {
+    @extend .message;
+  }
+}

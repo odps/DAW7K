@@ -1,0 +1,13 @@
+@mixin cambiaTema($theme) {
+  @if ($theme == "dark") {
+    background-color: black;
+  } @else if ($theme == "pink") {
+    background-color: pink;
+  } @else {
+    background-color: white;
+  }
+}
+
+h1 {
+  @include cambiaTema("pink");
+}
