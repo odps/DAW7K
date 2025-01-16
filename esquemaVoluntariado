@@ -34,6 +34,10 @@ Dentro de un grupo tienen chat privado / insignias que identifican a sus miembro
 Los grupos pueden crear eventos.
 Los grupos tambien pueden empezar campañas de financiacion.
 
+Implementacion de un sistema de sanciones, basados en reportes/feedback de otros usuarios, un equipo de moderacion puede decidir suspender una cuenta.
+Sistema de moderacion de contenido, puede ser automatizado o manual, para denunciar contenido negativo/toxico.
+Posible integracion con APIs externas (Google Maps / Calendar / etc...)
+Posible sistema de retos semanales a nivel local, donde se anima a las personas a participar en eventos destacados y dar recompensas visuales a los usuarios (siguiendo la idea del "gamification")
 
 
 
