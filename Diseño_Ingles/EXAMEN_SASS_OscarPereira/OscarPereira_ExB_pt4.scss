@@ -1,0 +1,38 @@
+$darkBlue: #30496b;
+
+header {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: lightblue;
+  color: green;
+  button {
+    background-color: $darkBlue;
+    &:hover {
+      background: red;
+    }
+    &::after {
+      background: pink;
+    }
+  }
+}
+.contact {
+  display: inline;
+  button {
+    background-color: $darkBlue;
+  }
+}
+
+.menu {
+  @media screen and (max-width: 640px) {
+    background: blue;
+  }
+  @media screen and (min-width: 640px) and (max-width: 1280px) {
+    background: red;
+  }
+  @media screen and (min-width: 1280px) {
+    background: green;
+  }
+}

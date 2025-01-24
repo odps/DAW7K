@@ -1,0 +1,11 @@
+@mixin addBackgroundChildren($parent, $numChildren) {
+  .#{$parent} {
+    @for $i from 1 through $numChildren {
+      &:nth-child(#{$i}) {
+        background-color: blue;
+      }
+    }
+  }
+}
+
+@include addBackgroundChildren("ray", 5);

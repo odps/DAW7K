@@ -1,0 +1,24 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    {{ tituloListado }}
+  </div>
+  <div *ngIf="autores.length == 0">
+    <h4>No hay autores</h4>
+  </div>
+  <div *ngIf="autores.length > 0" class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let autor of autores">
+          <td>{{ autor.nombre }}</td>
+          <td>{{ autor.apellidos }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

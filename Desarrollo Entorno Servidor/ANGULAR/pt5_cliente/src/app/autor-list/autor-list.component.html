@@ -1,0 +1,35 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    {{ tituloListado }}
+  </div>
+  <div *ngIf="autores.length == 0">
+    <h4>No hay autores</h4>
+  </div>
+  <div *ngIf="autores.length > 0" class="table-responsive">
+    <!-- caja de filtrado -->
+    <div class="row">
+      <div class="col-md-4">
+        <input type="text" [(ngModel)]="listFilter" />
+      </div>
+    </div>
+    <br />
+    <div class="col-md-2">
+      <h3>Filtrado por:{{ listFilter }}</h3>
+    </div>
+    <!-- fin caja filtrado -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let autor of autores | autorListFilter : listFilter">
+          <td>{{ autor.nombre }}</td>
+          <td>{{ autor.apellidos }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+@mixin backgrounds($name) {
+  background: url($name) no-repeat center center fixed;
+  background-size: cover;
+}
+
+@mixin marginAndPadding($margin: 0, $padding: 0) {
+  margin: $margin;
+  padding: $padding;
+}
+
+@mixin widthAndHeight($width: 100%, $height: 100%) {
+  width: $width;
+  height: $height;
+}
+
+@mixin perspective($value: 0px) {
+  -webkit-perspective: $value;
+  perspective: $value;
+}
+
+@mixin overflow($x: auto, $y: auto) {
+  overflow-x: $x;
+  overflow-y: $y;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+}
+
+html {
+  body {
+    @include marginAndPadding();
+    font-family: Roboto;
+    color: #2e3738;
+  }
+}
+
+#landscape {
+  @include backgrounds("landscape.jpg");
+}
+#monkeys {
+  @include backgrounds("monkeys.jpg");
+}
+
+#landscape,
+#monkeys {
+  @include widthAndHeight(100%, 100vh);
+  @include perspective(1px);
+  @include overflow(hidden, auto);
+  h1 {
+    @include font-size(120px);
+    font-family: "Bitter", serif;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    opacity: 0.7;
+  }
+}
+
+p {
+  width: 70%;
+  @include font-size(20px);
+  @include marginAndPadding(0px auto, 5%);
+  font-weight: 200;
+  line-height: 1.4;
+  text-align: center;
+}
