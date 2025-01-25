@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialConnect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+        }
+        .navbar {
+            background-color: #ffffff;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .logo {
+            color: #1877f2;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .logout-btn {
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .sidebar {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+        }
+        .feed {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+        }
+        .post {
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">SocialConnect</div>
+        <button class="logout-btn">Logout</button>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h3>Profile</h3>
+            <p>John Doe</p>
+            <p>@johndoe</p>
+            <p>Posts: 142</p>
+            <p>Following: 234</p>
+            <p>Followers: 567</p>
+        </aside>
+
+        <main class="feed">
+            <h2>Your Feed</h2>
+            <div class="post">
+                <h4>Jane Smith</h4>
+                <p>Just finished my first coding project! #programming #excited</p>
+                <small>2 hours ago</small>
+            </div>
+            <div class="post">
+                <h4>Mike Johnson</h4>
+                <p>Beautiful day for a hike! 🏃‍♂️ #nature #outdoors</p>
+                <small>4 hours ago</small>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <h3>Trending Topics</h3>
+            <p>#programming</p>
+            <p>#technology</p>
+            <p>#webdev</p>
+            <p>#coding</p>
+        </aside>
+    </div>
+</body>
+<script src="logout.js"></script>
+</html>
