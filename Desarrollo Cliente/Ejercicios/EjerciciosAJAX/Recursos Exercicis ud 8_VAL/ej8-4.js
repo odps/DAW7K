@@ -6,17 +6,20 @@ const comprobar = document.querySelector("#comprobar");
 const login = document.querySelector("#login");
 
 window.addEventListener("load", () => {
-  comprobar.addEventListener("click", async () => {
-    await checkName(login.value)
-    .then();
+  comprobar.addEventListener("click", function (event) {
+    event.preventDefault();
+    const name = login.value;
+    checkName(name);
   });
 });
 
 async function serverRequest(type, info) {
   const response = await fetch(SERVER, {
     method: type,
-    headers: {},
-    body: info,
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: `login=${encodeURIComponent(info)}`,
   });
 
   if (response.ok) {
@@ -29,16 +32,16 @@ async function serverRequest(type, info) {
 async function checkName(name) {
   try {
     let response = await serverRequest("POST", name)
-    .then((valor)=>{
-      valor = valor.split(';')[0]
-      if ( valor == "si") {
-        disponibilidad.innerHTML = "Este nombre esta disponible";
-      } else {
-        console.log(valor);
-        disponibilidad.innerHTML = "Este nombre NO esta disponible";
-      }
-    })
-    .catch(error => console.error(error));
+      .then((valor) => {
+        valor = valor.split(";")[0];
+        if (valor == "si") {
+          disponibilidad.innerHTML = "Este nombre SI esta disponible";
+        } else {
+          console.log(valor);
+          disponibilidad.innerHTML = "Este nombre NO esta disponible";
+        }
+      })
+      .catch((error) => console.error(error));
   } catch (error) {
     console.error("Ha ocurrido un error", error);
   }

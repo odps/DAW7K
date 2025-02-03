@@ -1,0 +1,23 @@
+Concepto,Ingresos (€),Gastos (€)
+Ingresos por Suscripciones (Plan Básico),9990,
+Ingresos por Suscripciones (Plan Personalizado),9995,
+Ingresos por Suscripciones (Plan Avanzado para Instituciones),40000,
+Facturación por Interacciones (Voz),40,
+Facturación por Interacciones (Texto),60,
+Planes Personalizados para Instituciones (50 usuarios),100000,
+Planes Personalizados para Instituciones (100 usuarios),112500,
+Costes de Operación (Infraestructura tecnológica),,-5000
+Mantenimiento Técnico (IA y software),,-2000
+Sueldos (Desarrolladores de software),,-16000
+Sueldos (Asesores en salud),,-5000
+Sueldos (Marketing y Publicidad),,-6000
+Sueldos (Atención al cliente),,-6000
+Sueldos (Administración y RRHH),,-2500
+Impuestos y Obligaciones (Constitución y Registros),,-1000
+Campañas de Marketing (Lanzamiento inicial),,-5000
+Campañas de Marketing (Marketing continuo a partir del mes 7),,-1500
+Alquiler de Oficinas,,-1500
+Costes de Formación y Desarrollo,,-500
+Otros Costes Operativos,,-500
+TOTAL,172585,-155500
+Beneficio Estimado (sin impuestos),17085,
