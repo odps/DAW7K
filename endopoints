@@ -1,0 +1,86 @@
+Api Endpoints:
+
+GET {{base_url}}/events
+Expects: nothing, gets the id from the request
+Returns:
+{
+    "events": [
+        {
+            "id": 1,
+            "title": "Evento de Prueba",
+            "description": "Este es un evento benefico",
+            "location": "C/Alberique 18",
+            "date_time": "2025-01-01 00:00:00",
+            "created_by": 2,
+            "created_at": "2025-02-05T08:15:03.000000Z",
+            "updated_at": "2025-02-05T08:15:03.000000Z",
+            "pivot": {
+                "user_id": 2,
+                "event_id": 1,
+                "joined_at": "2025-02-05 09:15:03"
+            }
+        },
+    ]
+}
+
+GET {{base_url}}/events/1
+
+Expects: nothing
+Returns: {
+    "event": {
+        "id": 1,
+        "title": "Evento de Prueba",
+        "description": "Este es un evento benefico",
+        "location": "C/Alberique 18",
+        "date_time": "2025-01-01 00:00:00",
+        "created_by": 2,
+        "created_at": "2025-02-05T08:15:03.000000Z",
+        "updated_at": "2025-02-05T08:15:03.000000Z"
+    },
+    "participants": [
+        {
+            "id": 2,
+            "name": "Test User",
+            "email": "test@mail.com",
+            "email_verified_at": null,
+            "created_at": "2025-02-03T12:37:23.000000Z",
+            "updated_at": "2025-02-05T07:12:47.000000Z",
+            "pivot": {
+                "event_id": 1,
+                "user_id": 2,
+                "joined_at": "2025-02-05 09:15:03"
+            }
+        }
+    ]
+}
+
+PUT {{base_url}}/events/edit/9
+Expects:
+{
+    "title": "Updated Event Name",
+    "description": "Updated description",
+    "date_time": "2023-12-31",
+    "location": "Updated Location"
+}
+Returns:
+modified event
+
+DELETE {{base_url}}/events/1
+Expects: id of the event
+Returns: message of deletion
+
+POST {{base_url}}/events/join
+Expects:
+{
+    "event_id": 1,
+    "user_id": 3
+}
+Returns:message
+
+POST {{base_url}}/events/leave
+Expects:
+{
+    "event_id": 1,
+    "user_id": 3
+}
+Returns message.
